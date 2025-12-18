@@ -1,2 +1,2 @@
-# Hunenath-tech-company
+# Hunainath-tech-company
 Best IT company
