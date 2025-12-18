@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunenath soft tech company - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px;
+            background-color: #e9ecef;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hunenath soft tech company</h1> 
+        <p>Innovating Solutions for Tomorrow</p>
+    </header>
+    
+    <div class="hero">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTl9V00YQe3jlEOLO2M_5V8897SNoUzvtLqw&s" alt="Company Image"> 
+        <h2>Welcome to Hunenath soft tech company</h2> 
+        <p>We provide top-notch services to drive your success.</p>
+    </div>
+    
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Hunenath soft tech company is a leading provider of 💡 We turn ideas into smart, reliable digital solutions.
+🚀 Focused on quality, innovation, and long-term value for clients.
+🛠️ Technology built to solve real problems, not just look good.since 2025. </p> 
+        
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1: 1️⃣ Software & Web Development
+
+Custom websites and software built to be fast, secure, and scalable—designed exactly for your business needs.</li>
+            <li>Service 2: 2️⃣ Mobile App Development
+
+User-friendly Android & iOS apps that help businesses connect better with customers and grow digitally.</li>
+            <li>Service 3: 3️⃣ IT Solutions & Digital Support
+
+Complete IT services including system setup, maintenance, security, and ongoing technical support to keep businesses running smoothly.</li>
+        </ul>
+        
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="responseMessage"></p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Hunenath soft tech company. All rights reserved.</p> 
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('Hunenath soft tech company').value;
+            const email = document.getElementById('Hunenathsofttechcompany@gmail.com').value;
+            const message = document.getElementById('message').value;
+            
+            try {
+                const response = await fetch('http://localhost:3000/contact', {  // Change to your backend URL when hosted
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message })
+                });
+                const result = await response.text();
+                document.getElementById('responseMessage').textContent = result;
+            } catch (error) {
+                document.getElementById('responseMessage').textContent = 'Error sending message.';
+            }
+        });
+    </script>
+</body>
+</html>
